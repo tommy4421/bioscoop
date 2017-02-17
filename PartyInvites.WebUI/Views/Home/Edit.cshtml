@@ -1,0 +1,60 @@
+﻿@model PartyInvites.Domain.Entities.GuestResponse
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<div class="jumbotron">
+    <h2>Je hebt jezelf al ingeschreven</h2>
+
+    <p>
+        Hieronder ziet u uw ingevulde gegevens
+        <ul>
+            <li>Naam: @Model.Name</li>
+            <li>Email: @Model.Email</li>
+            <li>Aanwezig: @(Model.WillAttend != null && Model.WillAttend.Value ? "Ja" : "Nee")</li>
+        </ul>
+    </p>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading text-center">
+        <h4>Gegevens aanpassen</h4>
+        <p>Wil je je gegevens aanpassen? Verander hieronder je gegevens en druk dan op de onderstaande knop.</p>
+    </div>
+
+    <div class="panel-body">
+        @using (Html.BeginForm()) {
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label>Je naam:</label>
+                @Html.TextBoxFor(x => x.Name, new {@class = "form-control"})
+            </div>
+            <div class="form-group">
+                <label>Je email:</label>
+                @Html.TextBoxFor(x => x.Email, new {@class = "form-control"})
+            </div>
+            <div class="form-group">
+                <label>Je telefoon:</label>
+                @Html.TextBoxFor(x => x.Phone, new {@class = "form-control"})
+            </div>
+            <div class="form-group">
+                <label>Ben je aanwezig?</label>
+                @Html.DropDownListFor(x => x.WillAttend, new[] {
+                    new SelectListItem {
+                        Text = "Ja, ik ben er!",
+                        Value = bool.TrueString
+                    },
+                    new SelectListItem {
+                        Text = "Nee, ik kan niet komen.",
+                        Value = bool.FalseString
+                    }
+                }, "Kies een optie", new {@class = "form-control"})
+            </div>
+            <div class="text-center">
+                <input class="btn btn-info" type="submit" value="Wijzigen"/>
+            </div>
+        }
+    </div>
+</div>

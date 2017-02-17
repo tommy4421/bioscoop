@@ -1,0 +1,16 @@
+﻿@model PartyInvites.Domain.Entities.GuestResponse
+
+@{
+    ViewBag.Title = "Bedankt!";
+}
+
+
+<div>
+    <h1>Bedankt, @Model.Name!</h1>
+    @if (Model.WillAttend == true) {
+        @:Het is leuk dat je komt! We zetten de drankjes alvast in de koelkast!
+    }
+    else {
+        @:Jammer dat je niet kan komen, maar toch bedankt dat je het hebt laten weten.
+    }
+</div>

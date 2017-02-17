@@ -1,0 +1,45 @@
+﻿@model PartyInvites.Domain.Entities.GuestResponse
+
+@{
+    ViewBag.Title = "Inschrijven";
+}
+
+
+<div class="panel panel-success">
+    <div class="panel-heading text-center">
+        <h4>RSVP</h4>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm()) {
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label>Je naam:</label>
+                @Html.TextBoxFor(x => x.Name, new {@class = "form-control"})
+            </div>
+            <div class="form-group">
+                <label>Je email:</label>
+                @Html.TextBoxFor(x => x.Email, new {@class = "form-control"})
+            </div>
+            <div class="form-group">
+                <label>Je telefoon:</label>
+                @Html.TextBoxFor(x => x.Phone, new {@class = "form-control"})
+            </div>
+            <div class="form-group">
+                <label>Ben je aanwezig?</label>
+                @Html.DropDownListFor(x => x.WillAttend, new[] {
+                    new SelectListItem {
+                        Text = "Ja, ik ben er!",
+                        Value = bool.TrueString
+                    },
+                    new SelectListItem {
+                        Text = "Nee, ik kan niet komen.",
+                        Value = bool.FalseString
+                    }
+                }, "Kies een optie", new {@class = "form-control"})
+            </div>
+            <div class="text-center">
+                <input class="btn btn-success" type="submit" value="Submit RSVP"/>
+            </div>
+        }
+    </div>
+</div>

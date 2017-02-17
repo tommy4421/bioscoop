@@ -1,0 +1,7 @@
+﻿@model PartyInvites.Domain.Abstract.IRepository<PartyInvites.Domain.Entities.GuestResponse>
+
+<div class="navbar-right">
+    @Html.ActionLink(string.Format("Replies: {0} ({1}) List", new object[] {Model.GetAllResponses().Count(), Model.GetAllResponses().Count(x => x.WillAttend.Value)}), "Responses", "Home",
+        new {},
+        new {@class = "btn btn-default navbar-btn"})
+</div>

@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="text-center">
+
+    <h2>@ViewBag.Greeting</h2>
+    <h3>We gaan een leuk feest organiseren...</h3>
+    <h4>En jij bent uitgenodigd!</h4>
+    <br>
+    <div class="btn btn-success">
+        @Html.ActionLink("Inschrijven!", "RsvpForm")
+    </div>
+
+</div>
+
+<div>
+    <h2>Er zijn nu @ViewBag.Responses mensen die gereageerd hebben!</h2>
+</div>

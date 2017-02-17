@@ -1,0 +1,10 @@
+Install-Package Ninject -version 3.0.1.10 -projectname PartyInvites.WebUI
+Install-Package Ninject.Web.Common -version 3.0.0.7 -projectname PartyInvites.WebUI
+Install-Package Ninject.MVC3 -Version 3.0.0.6 -projectname PartyInvites.WebUI
+Install-Package Ninject -version 3.0.1.10 -projectname PartyInvites.UnitTests
+Install-Package Ninject.Web.Common -version 3.0.0.7 -projectname PartyInvites.UnitTests
+Install-Package Ninject.MVC3 -Version 3.0.0.6 -projectname PartyInvites.UnitTests
+Install-Package Moq -version 4.1.1309.1617 -projectname PartyInvites.WebUI
+Install-Package Moq -version 4.1.1309.1617 -projectname PartyInvites.UnitTests
+Install-Package Microsoft.Aspnet.Mvc -version 5.0.0 -projectname PartyInvites.Domain
+Install-Package Microsoft.Aspnet.Mvc -version 5.0.0 -projectname PartyInvites.UnitTests

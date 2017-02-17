@@ -1,0 +1,34 @@
+﻿@model PartyInvites.WebUI.Models.GuestResponseListViewModel
+
+@{
+    ViewBag.Title = "Antwoorden";
+}
+
+<h2>Antwoord van genodigden</h2>
+<p>Hieronder kun je zien wie er allemaal komt en niet komt</p>
+
+@if (true) {
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Email</th>
+                <th>Aanwezig</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var g in Model.GuestResponses) {
+                <tr>
+                    <td>@g.Name</td>
+                    <td>@g.Email</td>
+                    <td>@(g.WillAttend != null && g.WillAttend.Value ? "Komt" : "Komt niet")</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+else {
+    <p>Er heeft nog niemand gereageerd.</p>
+}
